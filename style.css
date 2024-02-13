@@ -23,6 +23,7 @@
 }
 
 body {
+  height: 100vh;
   background: var(--bg-url) top center/cover no-repeat;
   transition: background 1.5s;
 }
@@ -33,7 +34,9 @@ body * {
 }
 
 #container {
-  width: 360px;
+  width: 100%;
+  max-width: 580px;
+  min-width: 300px;
   margin: 48px auto;
   padding: 24px;
 }
@@ -74,6 +77,11 @@ div#switch button {
   border: 0;
   border-radius: 50%;
   transition: transform 0.5s;
+  cursor: pointer;
+}
+
+div#switch button:hover {
+  outline: 8px solid var(--background-color);
 }
 
 .light-theme div#switch button {
@@ -142,4 +150,14 @@ footer {
   text-align: center;
   font-size: 12px;
   opacity: 0.5;
+}
+
+@media (min-width: 700px) {
+  :root {
+    --bg-url: url(./assets/bg-desktop.jpg);
+  }
+
+  .light-theme {
+    --bg-url: url(./assets/bg-desktop-light.jpg);
+  }
 }
